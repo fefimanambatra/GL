@@ -2,15 +2,18 @@
 
 from odoo import models, fields, api
 
-
+# CLASS MRP
 class MrpProduction(models.Model):
     _inherit = 'mrp.production'
-
+# 1èr niveau d'imbrication 
     largeur = fields.Float(
+        # 2èm niveau d'imbrication 
         string="Largeur")
     hauteur = fields.Float(
+         # 3èm niveau d'imbrication 
         string="Hauteur")
     nbr_barre = fields.Float(
+         # 4èm niveau d'imbrication 
         string="Nombre total de barres")
     # product_lines1 = fields.One2many(
     #     string="Articles",
@@ -21,6 +24,7 @@ class MrpProduction(models.Model):
     #     comodel_name="mrp.production.product.accessory.line",
     #     inverse_name="production_id")
     is_printable = fields.Boolean(
+         # 5èm niveau d'imbrication 
         string="Fiche de débit standard",
         default=False)
     dimension = fields.Float(
